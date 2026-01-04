@@ -11,6 +11,7 @@ const SignUp = () => {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [formData, setFormData] = useState({
         fullName: '',
+        username: '',
         email: '',
         password: '',
         confirmPassword: ''
@@ -21,7 +22,7 @@ const SignUp = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [pendingVerification, setPendingVerification] = useState(false);
     const [code, setCode] = useState('');
-    
+
 
     // Trigger entrance animation
     useEffect(() => {
@@ -57,12 +58,15 @@ const SignUp = () => {
             console.log('Form data:', { ...formData, password: '[REDACTED]', confirmPassword: '[REDACTED]' });
 
             // Prepare sign-up data
-            const signUpData = {
+            const signUpData: any = {
                 emailAddress: formData.email,
                 password: formData.password,
                 firstName: formData.fullName.split(' ')[0],
                 lastName: formData.fullName.split(' ').slice(1).join(' ') || undefined,
             };
+
+            // Use provided username, or fall back to full name if not provided
+            signUpData.username = formData.username.trim() || formData.fullName.trim();
 
             console.log('Sign-up data:', { ...signUpData, password: '[REDACTED]' });
 
@@ -518,6 +522,19 @@ const SignUp = () => {
                                                 onChange={handleChange}
                                                 className="input-field"
                                                 required
+                                            />
+                                        </div>
+
+                                        {/* Username Input (Optional) */}
+                                        <div className="input-wrapper relative">
+                                            <User className="input-icon w-5 h-5" />
+                                            <input
+                                                type="text"
+                                                name="username"
+                                                placeholder="Username (optional)"
+                                                value={formData.username}
+                                                onChange={handleChange}
+                                                className="input-field"
                                             />
                                         </div>
 
