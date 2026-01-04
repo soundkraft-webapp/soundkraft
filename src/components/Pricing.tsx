@@ -6,6 +6,7 @@ interface PricingPlan {
   period: string;
   features: string[];
   popular?: boolean;
+  link: string;
 }
 
 const Pricing = () => {
@@ -26,7 +27,8 @@ const Pricing = () => {
         'Fast Assessment of Your Skills',
         'Comfort & Convenience from Anywhere',
         'Risk-Free Exploration'
-      ]
+      ],
+      link: 'https://classplusapp.com/w/wlp/xbnojz/sound-kraft-demo'
     },
     {
       name: '1:5 & Group Sessions',
@@ -40,7 +42,8 @@ const Pricing = () => {
         'Collaborative Environment',
         'Structured Curriculum',
         'Fixed Time & Learning Schedule'
-      ]
+      ],
+      link: '#'
     },
     {
       name: '30 One-Hour Pro DJing Course',
@@ -55,7 +58,8 @@ const Pricing = () => {
         'Build Confidence Quickly',
         'Complimentary Bonus Pack (₹1.3 Lakh Value)'
       ],
-      popular: true
+      popular: true,
+      link: '#'
     }
   ];
 
@@ -236,15 +240,19 @@ const Pricing = () => {
                   </ul>
 
                   <div className="button-container">
-                    <button
+                    <a
+                      href={plan.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={
                         plan.popular
                           ? "pricing-btn-primary-compact"
                           : "pricing-btn-secondary"
                       }
+                      style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}
                     >
-                      Join Now
-                    </button>
+                      Book a Demo
+                    </a>
                   </div>
                 </div>
               </div>

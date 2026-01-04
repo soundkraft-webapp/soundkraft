@@ -6,6 +6,7 @@ interface Course {
   description: string;
   price: string;
   image: string;
+  link: string;
 }
 
 const Courses = () => {
@@ -18,19 +19,22 @@ const Courses = () => {
       title: 'Live DJ Demo Session',
       description: 'Experience a 1-on-1 live demo with our professional DJ trainers from the comfort of your home. Get a clear understanding of our teaching approach, tools, and course structure before enrolling.',
       price: '₹1,600',
-      image: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800',
+      link: '#'
     },
     {
       title: 'Group DJ Training Program',
       description: 'Learn DJing through 20 live one-hour sessions conducted in small groups with a 1:5 mentor-to-student ratio. This format ensures personalized attention, real-time feedback, and structured skill development guided by industry professionals.',
       price: '₹35,000 + GST',
-      image: 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800',
+      link: '#'
     },
     {
       title: 'Pro DJing – 1-on-1 Course',
       description: 'A fully personalized 1-on-1 online DJing program consisting of 30 live one-hour sessions. Designed for students seeking focused mentorship, flexible learning pace, and continuous real-time guidance from professional DJs.',
       price: '₹70,000 + GST',
-      image: 'https://images.pexels.com/photos/1481309/pexels-photo-1481309.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: 'https://images.pexels.com/photos/1481309/pexels-photo-1481309.jpeg?auto=compress&cs=tinysrgb&w=800',
+      link: '#'
     }
   ];
 
@@ -135,6 +139,7 @@ const Courses = () => {
         }
         .enroll-button:hover::before { left: 100%; }
         .enroll-button:active { transform: perspective(1000px) rotateX(0deg) translateY(0px) translateZ(0); transition: transform 0.1s; }
+        .enroll-button { display: inline-block; text-decoration: none; text-align: center; }
         
         .nav-arrows { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; transition-delay: 1.4s; }
         .is-visible .nav-arrows { opacity: 1; transform: translateY(0); }
@@ -197,7 +202,7 @@ const Courses = () => {
                       <p className="course-description text-sm sm:text-base">{course.description}</p>
                       <div className="course-footer">
                         <span className="course-price text-2xl sm:text-3xl">{course.price}</span>
-                        <button className="enroll-button text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">Enroll Now</button>
+                        <a href={course.link} target="_blank" rel="noopener noreferrer" className="enroll-button text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">Enroll Now</a>
                       </div>
                     </div>
                   </div>
