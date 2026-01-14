@@ -16,25 +16,25 @@ const Courses = () => {
 
   const courses: Course[] = [
     {
-      title: 'Live DJ Demo Session',
+      title: 'Personalized Live Demo',
       description: 'Experience a 1-on-1 live demo with our professional DJ trainers from the comfort of your home. Get a clear understanding of our teaching approach, tools, and course structure before enrolling.',
       price: '₹1,600',
       image: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800',
-      link: '#'
+      link: 'https://xbnojz.courses.store/708086?utm_source%3Dother%26utm_medium%3Dtutor-course-referral%26utm_campaign%3Dcourse-overview-webapp'
     },
     {
-      title: 'Group DJ Training Program',
+      title: 'For College Students & Kids',
       description: 'Learn DJing through 20 live one-hour sessions conducted in small groups with a 1:5 mentor-to-student ratio. This format ensures personalized attention, real-time feedback, and structured skill development guided by industry professionals.',
       price: '₹35,000 + GST',
       image: 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800',
-      link: '#'
+      link: 'https://xbnojz.courses.store/730703?utm_source%3Dother%26utm_medium%3Dtutor-course-referral%26utm_campaign%3Dcourse-overview-webapp'
     },
     {
       title: 'Pro DJing – 1-on-1 Course',
       description: 'A fully personalized 1-on-1 online DJing program consisting of 30 live one-hour sessions. Designed for students seeking focused mentorship, flexible learning pace, and continuous real-time guidance from professional DJs.',
       price: '₹70,000 + GST',
       image: 'https://images.pexels.com/photos/1481309/pexels-photo-1481309.jpeg?auto=compress&cs=tinysrgb&w=800',
-      link: '#'
+      link: 'https://xbnojz.courses.store/708909?utm_source%3Dother%26utm_medium%3Dtutor-course-referral%26utm_campaign%3Dcourse-overview-webapp'
     }
   ];
 
