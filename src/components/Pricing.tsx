@@ -43,7 +43,7 @@ const Pricing = () => {
         'Structured Curriculum',
         'Fixed Time & Learning Schedule'
       ],
-      link: '#'
+      link: 'https://xbnojz.courses.store/730703?utm_source%3Dother%26utm_medium%3Dtutor-course-referral%26utm_campaign%3Dcourse-overview-webapp'
     },
     {
       name: '30 One-Hour Pro DJing Course',
@@ -59,7 +59,7 @@ const Pricing = () => {
         'Complimentary Bonus Pack (₹1.3 Lakh Value)'
       ],
       popular: true,
-      link: '#'
+      link: 'https://xbnojz.courses.store/708909?utm_source%3Dother%26utm_medium%3Dtutor-course-referral%26utm_campaign%3Dcourse-overview-webapp'
     }
   ];
 
