@@ -16,7 +16,7 @@ const Pricing = () => {
   const pricingPlans: PricingPlan[] = [
     {
       name: 'Book Your Live Demo Now',
-      price: '₹1,600',
+      price: '₹1,594',
       period: ' + GST',
       features: [
         '1-on-1 Live Demo with Pro DJs',
@@ -32,7 +32,7 @@ const Pricing = () => {
     },
     {
       name: '1:5 & Group Sessions',
-      price: '₹35,000',
+      price: '₹30,020',
       period: ' + GST',
       features: [
         'Small Group Learning (1:5 Ratio)',
@@ -47,7 +47,7 @@ const Pricing = () => {
     },
     {
       name: '30 One-Hour Pro DJing Course',
-      price: '₹70,000',
+      price: '₹73,520',
       period: ' + GST',
       features: [
         '30 Live One-Hour Sessions',
