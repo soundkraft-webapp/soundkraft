@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+import { useUser } from '@clerk/clerk-react';
+import { toast } from 'sonner';
 
 interface PricingPlan {
   name: string;
@@ -71,6 +73,21 @@ const Pricing = () => {
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => { if (sectionRef.current) observer.unobserve(sectionRef.current); };
   }, []);
+
+  const { isSignedIn } = useUser();
+
+  const handleBooking = (link: string) => {
+    if (!isSignedIn) {
+      toast.error('Please sign in or sign up to book a demo', {
+        action: {
+          label: 'Sign In',
+          onClick: () => window.location.href = '/signin'
+        }
+      });
+      return;
+    }
+    window.open(link, '_blank');
+  };
 
   return (
     <>
@@ -240,19 +257,17 @@ const Pricing = () => {
                   </ul>
 
                   <div className="button-container">
-                    <a
-                      href={plan.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => handleBooking(plan.link)}
                       className={
                         plan.popular
                           ? "pricing-btn-primary-compact"
                           : "pricing-btn-secondary"
                       }
-                      style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}
+                      style={{ display: 'block', width: '100%' }}
                     >
                       Book a Demo
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>

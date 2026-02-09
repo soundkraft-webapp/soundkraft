@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+import { useUser } from '@clerk/clerk-react';
+import { toast } from 'sonner';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Course {
@@ -62,6 +64,21 @@ const Courses = () => {
   const getVisibleCourses = () => {
     const startIndex = currentSlide * cardsPerSlide;
     return courses.slice(startIndex, startIndex + cardsPerSlide);
+  };
+
+  const { isSignedIn } = useUser();
+
+  const handleEnroll = (link: string) => {
+    if (!isSignedIn) {
+      toast.error('Please sign in or sign up to enroll in courses', {
+        action: {
+          label: 'Sign In',
+          onClick: () => window.location.href = '/signin'
+        }
+      });
+      return;
+    }
+    window.open(link, '_blank');
   };
 
   return (
@@ -202,7 +219,12 @@ const Courses = () => {
                       <p className="course-description text-sm sm:text-base">{course.description}</p>
                       <div className="course-footer">
                         <span className="course-price text-2xl sm:text-3xl">{course.price}</span>
-                        <a href={course.link} target="_blank" rel="noopener noreferrer" className="enroll-button text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">Enroll Now</a>
+                        <button
+                          onClick={() => handleEnroll(course.link)}
+                          className="enroll-button text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3"
+                        >
+                          Enroll Now
+                        </button>
                       </div>
                     </div>
                   </div>

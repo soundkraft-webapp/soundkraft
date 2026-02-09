@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Sparkles, Instagram, Youtube, Radio } from 'lucide-react';
 
 const Footer = () => {
@@ -45,9 +46,17 @@ const Footer = () => {
             ))}
           </div>
 
-          <p className="text-gray-500 text-sm">
-            © 2025 SoundKraft DJ Academy. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center space-y-2">
+            <p className="text-gray-500 text-sm">
+              © 2025 SoundKraft DJ Academy. All rights reserved.
+            </p>
+            <Link
+              to="/terms-and-conditions"
+              className="text-gray-500 text-sm hover:text-orange-500 transition-colors"
+            >
+              Terms and Conditions
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
