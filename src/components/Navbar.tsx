@@ -126,8 +126,9 @@ const Navbar = ({ activeSection, scrollToSection }: NavbarProps) => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-white"
+              className="md:hidden p-2 text-orange-500 hover:text-orange-400 focus:outline-none transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
