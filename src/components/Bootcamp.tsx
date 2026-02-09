@@ -188,16 +188,16 @@ const Bootcamp = () => {
 
       <section ref={sectionRef} id="bootcamp" className={`bootcamp-section min-h-screen py-20 px-4 flex items-center ${isVisible ? 'is-visible' : ''}`}>
         <div className="max-w-7xl mx-auto w-full">
-          <div className="animate-container bg-black/50 backdrop-blur-sm rounded-3xl p-8 sm:p-12 border border-orange-500/30 shadow-[0_0_40px_rgba(249,115,22,0.2)]">
-            <div className="text-center mb-12">
-              <Trophy className="animate-icon w-16 h-16 text-orange-500 mx-auto mb-6" />
-              <h2 className="animate-title text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-orange-400 bg-clip-text text-transparent">
+          <div className="animate-container bg-black/50 backdrop-blur-sm rounded-3xl p-4 sm:p-12 border border-orange-500/30 shadow-[0_0_40px_rgba(249,115,22,0.2)]">
+            <div className="text-center mb-8 sm:mb-12">
+              <Trophy className="animate-icon w-12 h-12 sm:w-16 sm:h-16 text-orange-500 mx-auto mb-4 sm:mb-6" />
+              <h2 className="animate-title text-3xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-orange-400 bg-clip-text text-transparent">
                 100% Money-Back Guarantee
               </h2>
-              <p className="animate-subtitle text-xl text-gray-300">
+              <p className="animate-subtitle text-lg sm:text-xl text-gray-300 px-2">
                 Your dream Your sound Your skill built in 30 hours.
               </p>
-              <p className="text-lg text-orange-400 mt-3">
+              <p className="text-base sm:text-lg text-orange-400 mt-2 sm:mt-3 px-2">
                 Learn DJing in 30 hours or get your full fee refunded.
               </p>
             </div>
@@ -206,16 +206,16 @@ const Bootcamp = () => {
               {bootcampFeatures.map((feature, index) => (
                 <div
                   key={index}
-                  className="feature-card feature-hover text-center p-6 bg-orange-500/10 rounded-xl border border-orange-500/30"
+                  className="feature-card feature-hover text-center p-4 sm:p-6 bg-orange-500/10 rounded-xl border border-orange-500/30 flex flex-col items-center justify-start h-full"
                 >
-                  <feature.icon className="feature-icon w-12 h-12 text-orange-500 mx-auto mb-4" />
-                  <h3 className="text-lg font-bold mb-1 text-orange-400">
+                  <feature.icon className="feature-icon w-10 h-10 sm:w-12 sm:h-12 text-orange-500 mx-auto mb-3 sm:mb-4 flex-shrink-0" />
+                  <h3 className="text-base sm:text-lg font-bold mb-1 text-orange-400 w-full break-words">
                     {feature.title}
                   </h3>
                   {feature.subtitle && (
-                    <p className="text-sm text-orange-300 mb-2">{feature.subtitle}</p>
+                    <p className="text-xs sm:text-sm text-orange-300 mb-2">{feature.subtitle}</p>
                   )}
-                  <p className="text-gray-400 text-sm">{feature.description}</p>
+                  <p className="text-gray-400 text-xs sm:text-sm mt-auto w-full">{feature.description}</p>
                 </div>
               ))}
             </div>
