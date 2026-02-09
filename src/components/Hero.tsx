@@ -254,28 +254,6 @@ const Hero = ({ scrollToSection }: HeroProps) => {
           margin: 3rem auto 0;
         }
 
-        /* Mobile-first responsive stats cards - MODIFIED FOR SINGLE ROW */
-        @media (max-width: 768px) {
-          .stats-grid {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 2rem;
-            padding: 0 1rem;
-            max-width: 100%;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .stats-grid {
-            gap: 0.25rem;
-            margin-top: 1.5rem;
-          padding: 0 0.5rem;
-          }
-        }
-
         .stat-card {
           position: relative;
           background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(0, 0, 0, 0.3));
@@ -317,69 +295,66 @@ const Hero = ({ scrollToSection }: HeroProps) => {
           box-shadow: 0 20px 60px rgba(249, 115, 22, 0.4),
                       0 0 0 1px rgba(249, 115, 22, 0.3) inset,
                       0 0 40px rgba(249, 115, 22, 0.2);
-        }/* Mobile-specific card styling - MODIFIED TO REMOVE BACKGROUND */
+        }
+
+        /* Mobile-first responsive stats cards - 2x2 GRID FOR BETTER MOBILE ALIGNMENT */
         @media (max-width: 768px) {
-          .stat-card {
-            background: transparent !important;
-            backdrop-filter: none !important;
-            border: none !important;
-            border-radius: 0;
-            padding: 0.75rem 0.5rem;
-            margin: 0;
-            flex: 1;
-            min-width: 0;
-            box-shadow: none !important;
-          }
-
-          .stat-card:hover {
-            background: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-            transform: translateY(0) translateZ(0) !important;
-          }
-
-          .stat-card::before {
-            display: none !important;
+          .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 0 1rem;
           }
         }
 
         @media (max-width: 640px) {
+          .stats-grid {
+            gap: 0.75rem;
+            padding: 0 1rem;
+          }
+        }
+        
+        /* Mobile-specific card styling */
+        @media (max-width: 768px) {
           .stat-card {
-            padding: 0.5rem 0.25rem;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(0, 0, 0, 0.3));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 16px;
+            padding: 1rem 0.5rem;
+            box-shadow: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100px;
           }
-          
-          /* Adjust text sizes for mobile single row */
+
           .stat-card .text-3xl {
-            font-size: 1.5rem !important;
-            line-height: 1.2;
+            font-size: 1.75rem !important;
             margin-bottom: 0.25rem !important;
-          }
-          
-          .stat-card .text-gray-300 {
-            font-size: 0.75rem;
-            line-height: 1.2;
           }
         }
 
         /* Compact mobile layout */
         @media (max-width: 480px) {
           .stats-grid {
-            gap: 0.125rem;
-            margin-top: 1rem;
-            padding: 0;
+            gap: 0.5rem;
+            padding: 0 0.5rem;
           }
           
           .stat-card {
-            padding: 0.375rem 0.125rem;
+            padding: 0.75rem 0.25rem;
+            min-height: 90px;
           }
           
           .stat-card .text-3xl {
-            font-size: 1.25rem !important;
-            margin-bottom: 0.125rem !important;
+            font-size: 1.5rem !important;
           }
           
           .stat-card .text-gray-300 {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
           }
         }
 
